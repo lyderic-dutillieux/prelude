@@ -35,3 +35,10 @@ eln-cache/
 
 # tree-sitter grammars installed by treesit
 tree-sitter/
+
+/tldr/
+/tutorial/
+/request/
+/type-break
+/org-roam.db
+/ido.last
