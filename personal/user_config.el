@@ -215,7 +215,6 @@
 (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
 
 
-
 ;;;;;;;;;;;;;;;;;;
 ;; TEXT EDITING
 ;;;;;;;;;;;;;;;;;;
@@ -225,8 +224,26 @@
                 vterm-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+;; Line number fix when zooming
+(eval-after-load "linum"
+  '(set-face-attribute 'linum nil :height 100))
+
 ;; YASnippet integration within hippie
 (add-to-list 'hippie-expand-try-functions-list 'yas-hippie-try-expand)
+
+;; Fira Code Symbole font (workaround)
+(require 'fira-code-mode)
+(custom-set-variables
+ '(fira-code-mode-disabled-ligature '("[]" "#{" "#(" "#_" "#_(" "x")))
+(add-hook 'prog-mode-hook 'fira-code-mode)
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+;; This works when using emacs --daemon + emacsclient
+(defun setup-firacode-font ()
+  "This function aims at being added to
+server-after-make-frame-functions to use Fira Code with emacs --daemon and emacsclient"
+  (set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
+(setup-firacode-font)
 
 ;; Multiple cursor configuration
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
