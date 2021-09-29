@@ -76,12 +76,6 @@ by Prelude.")
   "By default prelude installs downloaded packages in <prelude-dir>/elpa.
    Set to nil to override this behaviour")
 
-;; config changes made through the customize UI will be stored here
-(setq custom-file (expand-file-name "custom.el" prelude-personal-dir))
-;; load default configuration
-(load custom-file)
-
-
 (unless (file-exists-p prelude-savefile-dir)
   (make-directory prelude-savefile-dir))
 
@@ -122,6 +116,12 @@ by Prelude.")
 (require 'prelude-mode)
 (require 'prelude-editor)
 (require 'prelude-global-keybindings)
+
+;; config changes made through the customize UI will be stored here
+(setq custom-file (expand-file-name "custom.el" prelude-personal-dir))
+;; load default configuration
+(load custom-file)
+
 
 ;; macOS specific settings
 (when (eq system-type 'darwin)
