@@ -11,6 +11,7 @@
         counsel-M-x
         crux-move-beginning-of-line
         delete-indentation
+        dired-do-rename
         fixup-whitespace
         forward-sexp
         ignore
@@ -18,11 +19,16 @@
         kill-sexp
         kmacro-end-or-call-macro
         magit-copy-buffer-revision
+        markdown-electric-backquote
+        markdown-outdent-or-delete
         minibuffer-keyboard-quit
         mouse-set-region
         move-text-up
+        ns-copy-including-secondary
+        org-beginning-of-line
         org-cycle
         org-delete-char
+        org-end-of-line
         org-kill-line
         org-metaleft
         org-metaright
@@ -32,6 +38,7 @@
         paredit-backward-kill-word
         paredit-backward-up
         paredit-close-round
+        paredit-delete-char
         paredit-doublequote
         paredit-forward
         paredit-forward-delete
@@ -49,6 +56,7 @@
         paredit-reindent-defun
         paredit-semicolon
         paredit-splice-sexp
+        projectile-run-vterm
         repeat
         sp-backward-delete-char
         sp-forward-sexp
@@ -64,6 +72,7 @@
         cider-eval-defun-at-point
         dap-tooltip-mouse-motion
         handle-switch-frame
+        ivy-switch-buffer
         keyboard-escape-quit
         lsp-ui-doc--handle-mouse-movement
         previous-buffer

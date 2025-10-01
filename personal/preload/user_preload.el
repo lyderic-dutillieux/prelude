@@ -1,7 +1,8 @@
 ;;Starting the server
-;;(require 'server)
-;;(unless (server-running-p)
-;;  (server-start))
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
 (require 'org-protocol)
 
 (custom-set-faces
