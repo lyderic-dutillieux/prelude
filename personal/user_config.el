@@ -16,7 +16,11 @@
 ;;;;;;;;;;;;;;;;;;
 ;; HOST
 ;;;;;;;;;;;;;;;;;;
-(setq desktop (if (file-exists-p "~/Desktop/") "~/Desktop/" "~/Bureau/"))
+(setq desktop (if (file-exists-p "~/LeviiaSync/")
+                  "~/LeviiaSync/"
+                (if (file-exists-p "~/Desktop/")
+                    "~/Desktop/"
+                  "~/Bureau/")))
 
 ;;;;;;;;;;;;;;;;;;
 ;; UI
@@ -199,7 +203,7 @@
   (ns (setq neo-default-system-application "open")))
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)
-(setup-neo-theme)
+;(setup-neo-theme)
 (add-hook 'after-make-frame-functions 'setup-neo-theme)
 
 (require 'perspective)
@@ -247,6 +251,7 @@
    Note : To make this function run on every frame creation, add it to :
    server-after-make-frame-hook custom variable"
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
 (setq neo-autorefresh t)
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -304,6 +309,36 @@ server-after-make-frame-functions to use Fira Code with emacs --daemon and emacs
 (global-set-key [f1] 'vterm)
 (global-set-key [C-f1] 'vterm-toggle)
 (global-set-key [f2] 'vterm-toggle-cd)
+
+(defun vterm-execute-region-or-current-line ()
+  "Insert text of current line in vterm and execute."
+  (interactive)
+  (require 'vterm)
+  (eval-when-compile (require 'subr-x))
+  (let ((command (if (region-active-p)
+                     (string-trim (buffer-substring
+                                   (save-excursion (region-beginning))
+                                   (save-excursion (region-end))))
+                   (string-trim (buffer-substring (save-excursion
+                                                    (beginning-of-line)
+                                                    (point))
+                                                  (save-excursion
+                                                    (end-of-line)
+                                                    (point)))))))
+    (let ((buf (current-buffer)))
+      (unless (get-buffer vterm-buffer-name)
+        (vterm))
+      (display-buffer vterm-buffer-name t)
+      (switch-to-buffer-other-window vterm-buffer-name)
+      (vterm--goto-line -1)
+      (message command)
+      (vterm-send-string command)
+      (vterm-send-return)
+      (switch-to-buffer-other-window buf)
+      )))
+
+
+
 
 (defun display-buffer-above-selected (buffer alist)
   (let ((window (cond
@@ -378,16 +413,15 @@ server-after-make-frame-functions to use Fira Code with emacs --daemon and emacs
   (fira-code-mode 1)
 )
 
+
 (use-package nix-mode
   :mode "\\.nix\\'"
   :config
   (add-hook 'nix-mode-hook 'my-nix-mode-hook))
 
-(global-set-key (kbd "C-c C-S-n") 'helm-nixos-options)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-nixos-options)
   (global-set-key (kbd "TAB") #'company-indent-or-complete-common))
 
 (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix"))
