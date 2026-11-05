@@ -1,1 +1,1 @@
-(("/Users/lyderic/LeviiaSync/braindump/private/" ("index.org" 1 1793888131)))
+(("/Users/lyderic/dotfiles/emacs/.emacs.d/" ("personal/custom.el" 1 1793891281)) ("/Users/lyderic/LeviiaSync/braindump/private/" ("index.org" 2 1793889061)))
