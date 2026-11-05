@@ -25,7 +25,8 @@
  '(column-number-mode t)
  '(cursor-type 'bar)
  '(custom-safe-themes
-   '("603a831e0f2e466480cdc633ba37a0b1ae3c3e9a4e90183833bc4def3421a961"
+   '("2d74de1cc32d00b20b347f2d0037b945a4158004f99877630afc034a674e3ab7"
+     "603a831e0f2e466480cdc633ba37a0b1ae3c3e9a4e90183833bc4def3421a961"
      "81c3de64d684e23455236abde277cda4b66509ef2c28f66e059aa925b8b12534"
      "57e3f215bef8784157991c4957965aa31bac935aca011b29d7d8e113a652b693"
      "2dff5f0b44a9e6c8644b2159414af72261e38686072e063aa66ee98a2faecf0e" default))
@@ -34,6 +35,8 @@
    '("PATH" "MANPATH" "LEIN_USERNAME" "LEIN_PASSWORD" "NIX_PATH" "NOTMUCH_CONFIG" "PASSWORD_STORE_DIR"))
  '(fira-code-mode-disabled-ligature '("[]" "#{" "#(" "#_" "#_(" "x"))
  '(fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x"))
+ '(grep-find-ignored-directories
+   '("SCCS" "RCS" "CVS" "MCVS" ".src" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "node_modules"))
  '(ispell-dictionary "en")
  '(ivy-initial-inputs-alist
    '((counsel-minor . "^+") (counsel-package . "^+") (counsel-org-capture . "^") (counsel-M-x . "")
@@ -73,21 +76,21 @@
    '((type "TOLOOK(l)" "ASYNC(a)" "URGENT(u)" "DONE(d)") (sequence "TODO(t)" "NEXT(n)" "WIP(w)" "DONE(d)")))
  '(org-use-fast-todo-selection 'expert)
  '(package-selected-packages
-   '(php-mode swift-mode dotenv-mode editorconfig paredit gnu-elpa-keyring-update hcl-mode persp-projectile perspective
-              ripgrep projectile-ripgrep csv image+ plantuml-mode dockerfile-mode csv-mode js2-mode windresize
-              vterm-toggle vterm centaur-tabs counsel-projectile helpful doom-modeline lsp-treemacs nix-mode rjsx-mode
-              tldr helm-projectile helm async avy bind-key dash dash-functional gh git-commit ht inflections logito
-              lsp-mode markdown-mode marshal multiple-cursors pcache prescient transient with-editor rust-mode org-roam
-              visual-regexp-steroids visual-regexp all-the-icons-dired all-the-icons-ivy-rich all-the-icons neotree
-              tagedit scss-mode anakondo docker-compose-mode aggressive-indent pretty-symbols fira-code-mode use-package
-              ta clojure-snippets afternoon-theme flycheck-clj-kondo command-log-mode clj-refactor cider
-              clojure-mode-extra-font-locking clojure-mode yaml-mode web-mode lsp-ui json-mode rainbow-mode
-              elisp-slime-nav rainbow-delimiters company counsel swiper ivy-prescient ivy exec-path-from-shell
-              zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens
-              operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode git-timemachine gist
-              flycheck expand-region epl easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag
-              ace-window))
- '(persp-mode-prefix-key [134217843])
+   '(ace-window afternoon-theme ag aggressive-indent all-the-icons all-the-icons-dired all-the-icons-ivy-rich anakondo anzu
+                async avy bind-key browse-kill-ring centaur-tabs cider clj-refactor clojure-mode
+                clojure-mode-extra-font-locking clojure-snippets command-log-mode company counsel counsel-projectile
+                crux csv csv-mode dash dash-functional diff-hl diminish discover-my-major docker-compose-mode
+                dockerfile-mode doom-modeline dotenv-mode easy-kill editorconfig elisp-slime-nav epl
+                exec-path-from-shell expand-region fira-code-mode flycheck flycheck-clj-kondo gh gist git-commit
+                git-timemachine gnu-elpa-keyring-update guru-mode hcl-mode helm helm-projectile helpful hl-todo ht
+                image+ imenu-anywhere inflections ivy ivy-prescient js2-mode json-mode logito lsp-mode lsp-treemacs
+                lsp-ui magit markdown-mode marshal move-text multiple-cursors neotree nix-mode operate-on-number
+                org-roam paredit pcache persp-projectile perspective php-mode plantuml-mode powershell prescient
+                pretty-symbols projectile projectile-ripgrep rainbow-delimiters rainbow-mode ripgrep rjsx-mode rust-mode
+                scss-mode smartparens smartrep super-save swift-mode swiper ta tagedit tldr transient undo-tree
+                use-package visual-regexp visual-regexp-steroids volatile-highlights vterm vterm-toggle web-mode
+                which-key windresize with-editor yaml-mode zenburn-theme zop-to-char))
+ '(persp-mode-prefix-key [3 8388723])
  '(plantuml-default-exec-mode 'jar)
  '(plantuml-jar-path "/Users/lyderic.dutillieux/bin/plantuml.jar")
  '(prelude-flyspell nil)
@@ -95,7 +98,8 @@
  '(projectile-globally-ignored-directories
    '(".idea" ".vscode" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn"
      ".stack-work" ".ccls-cache" ".cache" ".clangd" "node_modules" ".next"))
- '(projectile-indexing-method 'native)
+ '(projectile-globally-ignored-file-suffixes '("node_modules"))
+ '(projectile-indexing-method 'alien)
  '(safe-local-variable-values
    '((sql-connection-alist
       (local-db (sql-product 'mysql) (sql-server "127.0.0.1") (sql-user "my-user") (sql-password "mypwd")

@@ -21,3 +21,7 @@
     (custom-theme-set-faces
      'dracula
      '(term ((t (:background nil)))))))
+
+(when (eq system-type 'darwin)
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)))

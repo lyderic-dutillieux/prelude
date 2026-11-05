@@ -169,6 +169,14 @@
 (add-hook 'before-save-hook 'time-stamp)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+;; Undo 'org-fill-paragraph'
+(defun org-unfill-paragraph ()
+  "Unfill paragraph in Org mode."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (org-fill-paragraph nil)))
+(define-key org-mode-map (kbd "C-M-Q") 'org-unfill-paragraph)
+
 ;; Sending code to IELM from Org-mode
 ;; Source : https://github.com/daviwil/emacs-from-scratch/blob/master/show-notes/Emacs-Lisp-02.org#follow-along-with-ielm
 (require 'ielm)
@@ -204,7 +212,7 @@
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)
 ;(setup-neo-theme)
-(add-hook 'after-make-frame-functions 'setup-neo-theme)
+;(add-hook 'after-make-frame-functions 'setup-neo-theme)
 
 (require 'perspective)
 (require 'persp-projectile)

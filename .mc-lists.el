@@ -9,9 +9,11 @@
         cljr-raise-sexp
         company-indent-or-complete-common
         counsel-M-x
+        counsel-yank-pop
         crux-move-beginning-of-line
         delete-indentation
         dired-do-rename
+        end-of-buffer
         fixup-whitespace
         forward-sexp
         ignore
@@ -20,6 +22,7 @@
         kmacro-end-or-call-macro
         magit-copy-buffer-revision
         markdown-electric-backquote
+        markdown-end-of-line
         markdown-outdent-or-delete
         minibuffer-keyboard-quit
         mouse-set-region
@@ -29,10 +32,12 @@
         org-cycle
         org-delete-char
         org-end-of-line
+        org-force-self-insert
         org-kill-line
         org-metaleft
         org-metaright
         org-self-insert-command
+        org-yank
         paredit-backward
         paredit-backward-down
         paredit-backward-kill-word
@@ -59,8 +64,10 @@
         projectile-run-vterm
         repeat
         sp-backward-delete-char
+        sp-backward-kill-word
         sp-forward-sexp
         sp-kill-region
+        sp-kill-word
         swiper
         transpose-pair
         transpose-sexps
@@ -75,6 +82,7 @@
         ivy-switch-buffer
         keyboard-escape-quit
         lsp-ui-doc--handle-mouse-movement
+        org-fill-paragraph
         previous-buffer
         scroll-bar-toolkit-scroll
         ))
