@@ -1,3 +1,4 @@
+projectile-frecency.eld
 *~
 *.elc
 auto-save-list
@@ -15,6 +16,7 @@ places
 .smex-items
 savefile/
 projectile-bookmarks.eld
+projectile-frecency.eld
 session*
 .cask
 tramp
